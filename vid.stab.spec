@@ -7,7 +7,7 @@
 
 Name:           vid.stab
 Version:        0.98a
-Release:    	1%{?gver}%{dist}
+Release:    	2%{?gver}%{dist}
 Summary:        Video stabilize library for fmpeg, mlt or transcode
 
 Group:          Video
@@ -33,6 +33,7 @@ This package contains the shared library file.
 %package devel
 Summary: vid.stab plugin library
 Group: Development/Libraries
+Requires:  %{name}
 
 %description devel
 Video stabilize library for ffmpeg, mlt or transcode.
@@ -65,6 +66,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Sep 6 2015 Fredrik Fornstad <fredrik.fornstad@gmail.com> 0.98a-20150706-97c6ae2-2
+- Added requirement for devel
+
 * Mon Jul 6 2015 Fredrik Fornstad <fredrik.fornstad@gmail.com> 0.98a-20150706-97c6ae2-1
 - New upstream release
 - Introduced separate devel and libs rpms to enable future API updates without breaking dependencies
